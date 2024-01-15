@@ -19,6 +19,6 @@ public class Main {
 
         System.out.println(filme.somaDasAvaliacoes);
         System.out.println(filme.totalDeAvaliacoes);
-        System.out.println(filme.obterMediaAvaliacoes());
+        System.out.printf("Média de avaliações do filme: %.1f", filme.obterMediaAvaliacoes());
     }
 }
