@@ -1,5 +1,7 @@
 package br.com.alura.screenmatch.modelos;
 
+import org.w3c.dom.Text;
+
 public class Titulo {
     private String nome;
     private int anoDeLancamento;

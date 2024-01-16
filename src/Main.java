@@ -5,36 +5,47 @@
  */
 
 import br.com.alura.screenmatch.modelos.*;
+import br.com.alura.screenmatch.calculos.*;
 
 public class Main {
     public static void main(String[] args) {
         // Filme
-        Filme filme = new Filme();
-        filme.setNome("Matrix");
-        filme.setAnoDeLancamento(1999);
-        filme.setDiretor("Wachowski Sisters");
-        filme.setIncluidoNoPlano(true);
-        filme.setDuracaoEmMinutos(130);
+        Filme matrix = new Filme();
+        matrix.setNome("Matrix");
+        matrix.setAnoDeLancamento(1999);
+        matrix.setDiretor("Wachowski Sisters");
+        matrix.setIncluidoNoPlano(true);
+        matrix.setDuracaoEmMinutos(130);
+        matrix.exibeFichaTecnica();
+        System.out.println("Duração do matrix: " + matrix.getDuracaoEmMinutos());
 
-        filme.exibeFichaTecnica();
-        System.out.println("Duração do filme: " + filme.getDuracaoEmMinutos());
+        System.out.println("Direção: " + matrix.getDiretor() + " minutos");
+        matrix.avalia(8);
+        matrix.avalia(5);
+        matrix.avalia(10);
 
-        System.out.println("Direção: " + filme.getDiretor() + " minutos");
-        filme.avalia(8);
-        filme.avalia(5);
-        filme.avalia(10);
+        System.out.println("Total de avaliações: " + matrix.getTotalDeAvaliacoes());
+        System.out.printf("Média de avaliações do matrix: %.1f\n", matrix.obterMediaAvaliacoes());
 
-        System.out.println("Total de avaliações: " + filme.getTotalDeAvaliacoes());
-        System.out.printf("Média de avaliações do filme: %.1f\n", filme.obterMediaAvaliacoes());
+        Filme starWars = new Filme();
+        starWars.setNome("Star Wars");
+        starWars.setDuracaoEmMinutos(200);
 
         // Serie
-        Serie serie = new Serie();
-        serie.setNome("Sobrenatural");
-        serie.setAnoDeLancamento(2005);
-        serie.setTemporadas(15);
-        serie.setEpisodiosPorTemporada(22);
-        serie.setMinutosPorEpisodio(40);
-        serie.exibeFichaTecnica();
-        System.out.println("Duração total da série: " + serie.getDuracaoEmMinutos() + " minutos");
+        Serie theOffice = new Serie();
+        theOffice.setNome("The Office");
+        theOffice.setAnoDeLancamento(2005);
+        theOffice.setTemporadas(9);
+        theOffice.setEpisodiosPorTemporada(22);
+        theOffice.setMinutosPorEpisodio(20);
+        theOffice.setDuracaoEmMinutos(theOffice.getDuracaoEmMinutos());
+        theOffice.exibeFichaTecnica();
+        System.out.println("Duração total da série: " + theOffice.getDuracaoEmMinutos() + " minutos");
+
+        CalculadoraDeTempo calc = new CalculadoraDeTempo();
+        calc.inclui(matrix);
+        calc.inclui(starWars);
+        calc.inclui(theOffice);
+        System.out.println("Duração total = " + calc.getTempoTotal());
     }
 }
