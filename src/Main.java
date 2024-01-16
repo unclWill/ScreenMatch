@@ -4,8 +4,7 @@
  * Curso: Formação Java - Alura | Aplicando Orientação a Objetos
  */
 
-import br.com.alura.screenmatch.modelos.Filme;
-import br.com.alura.screenmatch.modelos.Serie;
+import br.com.alura.screenmatch.modelos.*;
 
 public class Main {
     public static void main(String[] args) {
