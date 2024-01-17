@@ -5,7 +5,7 @@
  */
 
 import br.com.alura.screenmatch.modelos.*;
-import br.com.alura.screenmatch.calculos.*;
+import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 
 public class Main {
     public static void main(String[] args) {
