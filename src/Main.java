@@ -4,6 +4,7 @@
  * Curso: Formação Java - Alura | Aplicando Orientação a Objetos
  */
 
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.*;
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 
@@ -47,5 +48,14 @@ public class Main {
         calc.inclui(starWars);
         calc.inclui(theOffice);
         System.out.println("Duração total = " + calc.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(matrix);
+
+        Episodio ep = new Episodio();
+        ep.setNumero(1);
+        ep.setSerie(theOffice);
+        ep.setTotalVisualizacoes(300);
+        filtro.filtra(ep);
     }
 }
