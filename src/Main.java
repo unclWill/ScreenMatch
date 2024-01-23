@@ -8,6 +8,8 @@ import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.*;
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         // Filme
@@ -57,5 +59,18 @@ public class Main {
         ep.setSerie(theOffice);
         ep.setTotalVisualizacoes(300);
         filtro.filtra(ep);
+
+        var montyPython = new Filme();
+        montyPython.setNome("Monty Python em Busca do Cálice Sagrado");
+        montyPython.setDuracaoEmMinutos(200);
+        montyPython.setAnoDeLancamento(2003);
+        montyPython.avalia(10.0);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(matrix);
+        listaDeFilmes.add(starWars);
+        listaDeFilmes.add(montyPython);
+        System.out.println("DIMENSÃO DA LISTA: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
     }
 }
